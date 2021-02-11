@@ -3,14 +3,29 @@ import ReactDOM from "react-dom";
 
 function Greeting(){
   return (
-      <div>
-        <Person />
-        <h1>Hard work will pay</h1>
-        <p>displine would be the key</p>
-      </div>
+      <section>
+        <Books />
+      </section>
   )
 };
 
-const Person = () => <h1>This is Fareed Askari</h1>;
+function BooksCover(){
+  return <img src="https://images-na.ssl-images-amazon.com/images/I/51wOOMQ+F3L._SX312_BO1,204,203,200_.jpg" alt="" />
+}
+
+const Title = () => <h1>Rich Dad Poor Dad</h1>;
+const Author = () => <h3>Robert T. Kiyosaki</h3>;
+
+
+function Books() {
+  return (
+    <div>
+      <BooksCover />
+      <Title />
+      <Author />
+    </div>
+  )
+}
+
 
 ReactDOM.render(<Greeting />, document.getElementById("root"));
