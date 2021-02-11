@@ -3,7 +3,10 @@ import ReactDOM from "react-dom";
 
 function Greeting(){
   return (
-    <h2>Learning process</h2>
+      <div>
+        <h1>Hard work will pay</h1>
+        <p>displine would be the key</p>
+      </div>
   )
 };
 
