@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 function Greeting(){
   return (
-    <h2>This is my first component</h2>
+    <h2>Learning process</h2>
   )
 };
 
