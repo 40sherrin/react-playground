@@ -2,31 +2,49 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-function Greeting(){
+const books = [
+  {
+    id: 1,
+    img: "https://images-na.ssl-images-amazon.com/images/I/51wOOMQ+F3L._SX312_BO1,204,203,200_.jpg",
+    title: "Rich Dad Poor Dad",
+    author: "Robert T. Kiyosaki"
+  },
+  {
+    id: 2,
+    img: "https://images-na.ssl-images-amazon.com/images/I/51wOOMQ+F3L._SX312_BO1,204,203,200_.jpg",
+    title: "Rich Dad Poor Dad",
+    author: "Robert T. Kiyosaki"
+  },
+  {
+    id: 3,
+    img: "https://images-na.ssl-images-amazon.com/images/I/51wOOMQ+F3L._SX312_BO1,204,203,200_.jpg",
+    title: "Rich Dad Poor Dad",
+    author: "Robert T. Kiyosaki"
+  }
+];
+
+const BookLists = () => {
   return (
-      <section>
-        <Books />
-      </section>
+    <section>
+      {
+        books.map((book, index) => {
+          return <Book key={book.id} {...book} />
+        })
+      }
+    </section>
   )
 };
 
-function BooksCover(){
-  return <img src="https://images-na.ssl-images-amazon.com/images/I/51wOOMQ+F3L._SX312_BO1,204,203,200_.jpg" alt="" />
-}
-
-const Title = () => <h1>Rich Dad Poor Dad</h1>;
-const Author = () => <h3>Robert T. Kiyosaki</h3>;
-
-
-function Books() {
+const Book = ({img, title, author}) => {
   return (
-    <div>
-      <BooksCover />
-      <Title />
-      <Author />
-    </div>
+    <article>
+      <img src={img} alt={img} />
+      <h1>{title}</h1>
+      <h3>{author}</h3>
+    </article>
   )
-}
+};
 
 
-ReactDOM.render(<Greeting />, document.getElementById("root"));
+
+ReactDOM.render(<BookLists />, document.getElementById("root"));
